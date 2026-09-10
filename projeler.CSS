@@ -1,0 +1,474 @@
+/* ==========================================================================
+   NEHİR KUZUKIRAN - PROJELER SAYFASI ÖZEL MİMARİSİ
+   Lüks, Glassmorphism ve Modern Tipografi Odaklı Tasarım
+   ========================================================================== */
+
+:root {
+  --bordo-ana: #780723;
+  --bordo-koyu: #4a0415;
+  --bordo-acik: #9e1238;
+  --krem-arka: #fcf9f5;
+  --krem-kart: rgba(255, 255, 255, 0.85);
+  --yazi-koyu: #2b2325;
+  --yazi-orta: #66585b;
+  --border-renk: rgba(120, 7, 35, 0.12);
+  --shadow-soft: 0 12px 32px rgba(120, 7, 35, 0.05);
+  --shadow-hover: 0 20px 40px rgba(120, 7, 35, 0.1);
+  --font-ana: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: var(--krem-arka);
+  color: var(--yazi-koyu);
+  font-family: var(--font-ana);
+  margin: 0;
+  padding: 0;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.projeler-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 1. HERO SECTION */
+.projeler-hero {
+  padding: 130px 0 40px;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(120, 7, 35, 0.06) 0%, rgba(252, 249, 245, 0) 70%);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--border-renk);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  margin-bottom: 20px;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--bordo-ana);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(120, 7, 35, 0.4);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(120, 7, 35, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(120, 7, 35, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(120, 7, 35, 0); }
+}
+
+.hero-baslik {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+
+.hero-ozet {
+  font-size: 1.15rem;
+  color: var(--yazi-orta);
+  max-width: 820px;
+  margin: 0 auto 32px;
+  font-weight: 500;
+}
+
+/* Hızlı Gezinti Butonları */
+.proje-nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.p-nav-btn {
+  background: #ffffff;
+  color: var(--bordo-ana);
+  border: 1px solid var(--border-renk);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.p-nav-btn:hover {
+  background: var(--bordo-ana);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(120, 7, 35, 0.2);
+}
+
+/* 2. ÖZET İSTATİSTİK BANTI */
+.proje-stats-banti {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-renk);
+  border-radius: 20px;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px auto 60px;
+  box-shadow: var(--shadow-soft);
+}
+
+.p-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-stat-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  line-height: 1;
+}
+
+.p-stat-lbl {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--yazi-orta);
+  margin-top: 6px;
+}
+
+.p-stat-divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--border-renk);
+}
+
+/* 3. PROJE KARTLARI */
+.projeler-akisi {
+  padding-bottom: 80px;
+}
+
+.proje-karti {
+  background: var(--krem-kart);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-renk);
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  scroll-margin-top: 100px;
+}
+
+.proje-karti:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(120, 7, 35, 0.25);
+}
+
+/* Kart Header */
+.proje-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-renk);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.proje-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.p-tag {
+  font-size: 0.73rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tag-medikal { background: #ffe0e6; color: #b7094c; }
+.tag-tarim { background: #e8f5e9; color: #1b5e20; }
+.tag-egitim { background: #e3f2fd; color: #0d47a1; }
+.tag-odul { background: #fff3cd; color: #856404; }
+.tag-normal { background: #f1f3f5; color: #495057; }
+.tag-tf { background: var(--bordo-ana); color: #ffffff; }
+
+.proje-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.proje-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--yazi-orta);
+  margin: 4px 0 0;
+}
+
+.proje-quote {
+  font-style: italic;
+  color: var(--bordo-acik);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.proje-status-badge {
+  background: #ffffff;
+  border: 1px solid var(--border-renk);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--yazi-koyu);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Grid Düzeni */
+.proje-body-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 36px;
+}
+
+.p-block {
+  margin-bottom: 24px;
+}
+
+.p-block h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-block p {
+  font-size: 0.98rem;
+  color: var(--yazi-koyu);
+  margin: 0 0 10px;
+}
+
+.p-highlight-box {
+  background: rgba(120, 7, 35, 0.04);
+  border-left: 3px solid var(--bordo-ana);
+  padding: 14px 18px;
+  border-radius: 0 12px 12px 0;
+  font-size: 0.92rem;
+  color: var(--bordo-koyu);
+}
+
+/* Sağ Kolon Kartları */
+.p-side-card {
+  background: #ffffff;
+  border: 1px solid var(--border-renk);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+}
+
+.p-side-card h4 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.p-side-card p {
+  font-size: 0.9rem;
+  color: var(--yazi-koyu);
+  margin: 0;
+}
+
+.success-card {
+  background: #fffdfa;
+  border-color: rgba(212, 160, 23, 0.3);
+}
+
+/* Teknolojiler Çip Görünümü */
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-chips span {
+  background: #f7f4f0;
+  border: 1px solid rgba(0,0,0,0.05);
+  color: var(--yazi-koyu);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Adım Listesi */
+.p-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.p-step-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-renk);
+}
+
+.p-step-list span {
+  background: var(--bordo-ana);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 4. TEKNOFEST ÖZEL VİTRİN BANNERI */
+.teknofest-hero-banner {
+  background: linear-gradient(135deg, var(--bordo-koyu) 0%, var(--bordo-ana) 100%);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  margin: 70px 0 36px;
+  box-shadow: 0 16px 36px rgba(120, 7, 35, 0.25);
+  scroll-margin-top: 100px;
+}
+
+.tf-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.teknofest-hero-banner h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin: 14px 0;
+}
+
+.teknofest-hero-banner p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.tf-sub-card {
+  border-left: 4px solid var(--bordo-ana);
+}
+
+/* 5. FOOTER KARTLARI */
+.proje-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.pf-card {
+  background: #ffffff;
+  border: 1px solid var(--border-renk);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow-soft);
+}
+
+.pf-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--bordo-ana);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pf-card p {
+  font-size: 0.95rem;
+  color: var(--yazi-orta);
+  margin: 0;
+}
+
+.pf-glow {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf7 100%);
+  border-color: rgba(120, 7, 35, 0.2);
+}
+
+/* 6. MOBİL UYUMLULUK */
+@media (max-width: 900px) {
+  .proje-body-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .proje-stats-banti {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .p-stat-divider {
+    width: 60%;
+    height: 1px;
+  }
+
+  .hero-baslik {
+    font-size: 2.3rem;
+  }
+
+  .proje-header {
+    flex-direction: column;
+  }
+
+  .proje-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

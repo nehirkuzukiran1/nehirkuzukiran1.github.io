@@ -1,0 +1,542 @@
+/* ==========================================================================
+   YENİ YARATICI DOKUNUŞLAR & TASARIM ELEMANLARI
+   ========================================================================== */
+
+/* Hero Üst Rozet & Live Status */
+.hero-ust-rozet-alani {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.canli-durum-rozet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(120, 7, 35, 0.15);
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: #4b5563;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.yanip-sonen-isik {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+  animation: nabiz 1.8s infinite;
+}
+
+@keyframes nabiz {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Hero Giriş Grid Yapısı */
+.hakkimda-giris-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 868px) {
+  .hakkimda-giris-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Profil / Motto Vurgu Kartı */
+.profil-odak-kart {
+  background: linear-gradient(145deg, #780723 0%, #4a0415 100%);
+  color: #ffffff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(120, 7, 35, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.profil-odak-kart::after {
+  content: '';
+  position: absolute;
+  top: -30%; right: -30%;
+  width: 150px; height: 150px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.odak-motto-no {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1.5px;
+}
+
+.odak-motto-yazi {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 14px 0 20px 0;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.odak-etiket-bulutu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.odak-etiket-bulutu span {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* Hikaye Akışı Sıra Numaraları */
+.hikaye-baslik-sira {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sira-no {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #780723;
+  opacity: 0.4;
+}
+
+/* Kapanış Butonları */
+.kapanis-butonlar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-bordo {
+  background: #780723;
+  color: #ffffff !important;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(120, 7, 35, 0.25);
+}
+
+.btn-primary-bordo:hover {
+  transform: translateY(-2px);
+  background: #5c051a;
+}
+
+.btn-secondary-bordo {
+  background: transparent;
+  color: #780723 !important;
+  border: 1.5px solid #780723;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-bordo:hover {
+  background: rgba(120, 7, 35, 0.06);
+  transform: translateY(-2px);
+}
+/* ==========================================================================
+   HAKKIMDA SAYFASI - EDİTORYAL BENTO MIMARISI
+   ========================================================================== */
+
+.hakkimda-mimarisi {
+  position: relative;
+  padding-top: 140px !important;
+  padding-bottom: 120px;
+  background-color: var(--ana-arka-plan, #FAF3E3) !important;
+  color: #1a1a1e;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+.hakkimda-kapsayici {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 1. HERO BENTO DÜZENİ */
+.hero-bento {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.rozet-grubu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.rozet-kod {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #780723;
+  background: rgba(120, 7, 35, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.rozet-durum {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.yesil-nokta {
+  width: 7px;
+  height: 7px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+.dev-baslik {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #780723;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.baslik-alti-odak {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.felsefe-karti {
+  background: #ffffff;
+  border: 1px solid rgba(120, 7, 35, 0.15);
+  border-left: 4px solid #780723;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(120, 7, 35, 0.04);
+}
+
+.bento-etiket {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #780723;
+  letter-spacing: 1px;
+}
+
+.felsefe-metin {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #141416;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* 2. MİKRO İSTATİSTİK BANTI */
+.mikro-istatistik-banti {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* Öğelerin arasındaki yan boşluğu artırır */
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(120, 7, 35, 0.1);
+  backdrop-filter: blur(8px);
+  
+  /* KUTU İÇİ BOŞLUK (İçeriden nefes alması için) */
+  padding: 32px 36px; /* Eski değer: 20px 28px */
+  
+  /* KUTU DIŞI BOŞLUK (Altındaki "Yolculuğum" ile arasını açar) */
+  margin-top: 40px;
+  margin-bottom: 120px; /* Eski değer: 80px */
+  
+  border-radius: 26px;
+} 
+
+.istatistik-oge {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* Sayı ve metin arasındaki boşluk (Eski değer: 12px) */
+}
+
+.istatistik-oge .sayi {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #780723;
+  opacity: 0.4;
+}
+
+.istatistik-oge .etiket {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* 3. AKIŞ KARTLARI VE ZAMAN ÇİZGİSİ */
+.hikaye-akis-alani {
+  margin-top: 60px !important;
+  clear: both !important;
+}
+
+.akis-karti {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+}
+.akis-karti:first-child {
+  padding-top: 20px !important;
+}
+.kart-sol-sira {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sira-numarasi {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #780723;
+  background: rgba(120, 7, 35, 0.08);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sira-cizgi {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(120, 7, 35, 0.2), transparent);
+  margin-top: 12px;
+}
+
+.kart-sag-icerik {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blok-baslik {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #780723;
+  margin: 0;
+}
+
+.kart-sag-icerik p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #374151;
+  margin: 0;
+}
+
+.vurgu-kutusu-minimal {
+  background: rgba(120, 7, 35, 0.04);
+  border-left: 3px solid #780723;
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.basari-odol-karti {
+  background: linear-gradient(135deg, #780723 0%, #4a0415 100%);
+  color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(120, 7, 35, 0.15);
+}
+
+.odul-rozet {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.basari-odol-karti h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.basari-odol-karti p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.95rem;
+}
+
+/* 4. PRENSİP BENTO İZGARA */
+.prensip-bento-izgara {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.prensip-bento-kutu {
+  background: #ffffff;
+  border: 1px solid rgba(20, 20, 22, 0.08);
+  padding: 22px;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.prensip-bento-kutu:hover {
+  transform: translateY(-4px);
+  border-color: rgba(120, 7, 35, 0.3);
+}
+
+.prensip-simge {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.prensip-bento-kutu h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #141416;
+}
+
+.prensip-bento-kutu p {
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  color: #6b7280 !important;
+}
+
+/* 5. KAPANIŞ KUTUSU */
+.hikaye-kapanis-bento {
+  position: relative;
+  margin-top: 90px;
+  background: #ffffff;
+  border: 1px solid rgba(120, 7, 35, 0.2);
+  border-radius: 24px;
+  padding: 50px 32px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(120, 7, 35, 0.05);
+}
+
+.kapanis-kod {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #780723;
+  letter-spacing: 1.5px;
+}
+
+.hikaye-kapanis-bento h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #780723;
+  margin: 12px 0;
+}
+
+.hikaye-kapanis-bento p {
+  font-size: 1.05rem;
+  color: #4b5563;
+  max-width: 580px;
+  margin: 0 auto 28px auto;
+  line-height: 1.7;
+}
+
+.kapanis-aksiyonlar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-bordo-dolu {
+  background: #780723;
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.btn-bordo-dolu:hover {
+  opacity: 0.9;
+}
+
+.btn-bordo-cizgi {
+  border: 1.5px solid #780723;
+  color: #780723 !important;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-bordo-cizgi:hover {
+  background: rgba(120, 7, 35, 0.05);
+}
+
+/* RESPONSIVE DÜZENLEMELER */
+@media (max-width: 768px) {
+  .hero-bento {
+    grid-template-columns: 1fr;
+  }
+  
+  .mikro-istatistik-banti {
+    grid-template-columns: 1fr;
+  }
+
+  .akis-karti {
+    grid-template-columns: 1fr;
+  }
+
+  .kart-sol-sira {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .sira-cizgi {
+    display: none;
+  }
+}
